@@ -1,12 +1,9 @@
-import {  type Meta, type StoryObj } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import Button from "../components/Button";
 
-
-
-
 const meta: Meta<typeof Button> = {
-  title: "Example/Button",
+  title: "Button",
   component: Button,
 };
 
@@ -16,11 +13,13 @@ type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
   args: {
     style: {
-      backgroundColor: 'red',
-      color:'white'
-    
+     
+      color: "white",
+      outline: "none",
+      border: "none",
     },
-    children: 'Button',
+    children: "Button",
+    className: 'bg-violet-100 text-white font-bold py-2 px-4 rounded hover:bg-violet-600',
   },
 };
 
@@ -28,17 +27,11 @@ export const Secondary: Story = {
   args: {
     style: {
       backgroundColor: "blue",
-      color:'white'
-
+      color: "white",
     },
-    children: 'Button',
+    children: "Button",
     onClick: () => {
-      alert('clicked')
-    }
-
+      alert("clicked");
+    },
   },
 };
-
-
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-
